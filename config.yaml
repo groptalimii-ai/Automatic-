@@ -1,0 +1,207 @@
+# ============================================
+# ⚙️  Digital Factory Configuration v2.0
+# ============================================
+
+# --- مفاتيح API ---
+api_keys:
+  openai: "sk-your-openai-key-here"
+  anthropic: "sk-ant-your-anthropic-key-here"
+  google_gemini: "your-gemini-key-here"
+
+  # قنوات الدفع
+  gumroad: "your-gumroad-access-token"
+  stripe: "sk-your-stripe-secret-key"
+  paypal:
+    client_id: "your-paypal-client-id"
+    client_secret: "your-paypal-client-secret"
+
+  # البريد الإلكتروني
+  sendgrid: "your-sendgrid-api-key"
+  mailchimp: "your-mailchimp-api-key"
+
+  # التواصل الاجتماعي
+  twitter:
+    api_key: "your-twitter-api-key"
+    api_secret: "your-twitter-api-secret"
+    access_token: "your-access-token"
+    access_secret: "your-access-secret"
+
+  # أدوات التصميم
+  midjourney: "your-midjourney-api-key"
+
+# --- إعدادات الويب ---
+web:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+  secret_key: "digital-factory-secret-key-change-in-production"
+
+# --- إعدادات الموبايل ---
+mobile:
+  api_base_url: "http://localhost:5000"
+  refresh_interval: 30
+
+# --- إعدادات البريد ---
+email:
+  smtp:
+    host: "smtp.gmail.com"
+    port: 587
+    username: "your-email@gmail.com"
+    password: "your-app-password"
+    from_email: "your-email@gmail.com"
+    from_name: "Digital Factory"
+
+  # إعدادات الحملات
+  campaigns:
+    welcome_sequence_days: [0, 1, 3, 7, 14]
+    max_emails_per_day: 100
+    default_sender: "Digital Factory"
+
+# --- إعدادات الدفع ---
+payments:
+  default_currency: "usd"
+  platforms:
+    - gumroad
+    - stripe
+    - paypal
+
+  # رسوم المنصات (للحسابات)
+  fees:
+    gumroad: 0.10  # 10%
+    stripe: 0.029  # 2.9% + $0.30
+    paypal: 0.029  # 2.9% + $0.30
+
+# --- إعدادات التواصل الاجتماعي ---
+social_media:
+  platforms:
+    - twitter
+    - instagram
+    - linkedin
+    - facebook
+    - tiktok
+
+  # أفضل أوقات النشر (توقيت UTC)
+  best_posting_times:
+    - "09:00"
+    - "12:00"
+    - "15:00"
+    - "18:00"
+    - "21:00"
+
+  # عدد المنشورات اليومية
+  posts_per_day: 3
+
+# --- إعدادات التحليلات ---
+analytics:
+  track_events:
+    - page_view
+    - product_view
+    - add_to_cart
+    - purchase
+    - email_open
+    - email_click
+    - social_share
+
+  report_schedule:
+    daily: "08:00"
+    weekly: "monday 09:00"
+    monthly: "1st 10:00"
+
+# --- أبحاث السوق ---
+market_research:
+  google_trends:
+    hl: "en-US"
+    tz: 180
+    geo: ""
+    timeframe: "today 12-m"
+
+  reddit:
+    client_id: "your-reddit-client-id"
+    client_secret: "your-reddit-client-secret"
+    user_agent: "DigitalFactory/2.0"
+    subreddits:
+      - "Entrepreneur"
+      - "passive_income"
+      - "sidehustle"
+      - "selfimprovement"
+      - "productivity"
+      - "design"
+      - "writing"
+      - "fitness"
+      - "nutrition"
+      - "startups"
+
+# --- إعدادات المنتجات ---
+product_settings:
+  product_types:
+    - "ebook"
+    - "template"
+    - "audio_pack"
+    - "video_course"
+    - "software_tool"
+    - "business_kit"
+    - "fitness_plan"
+    - "bundle"
+
+  price_ranges:
+    ebook: { min: 9, max: 47, optimal: 19 }
+    template: { min: 5, max: 29, optimal: 15 }
+    audio_pack: { min: 3, max: 19, optimal: 9 }
+    video_course: { min: 19, max: 97, optimal: 49 }
+    software_tool: { min: 15, max: 99, optimal: 29 }
+    business_kit: { min: 12, max: 49, optimal: 27 }
+    fitness_plan: { min: 7, max: 37, optimal: 17 }
+    bundle: { min: 29, max: 149, optimal: 67 }
+
+  quality:
+    min_pages_ebook: 30
+    min_templates: 5
+    min_audio_tracks: 5
+    min_video_lessons: 3
+
+# --- إعدادات الوكلاء ---
+agents:
+  market_research:
+    model: "gpt-4o"
+    temperature: 0.3
+    max_tokens: 2000
+
+  content_writer:
+    model: "gpt-4o"
+    temperature: 0.7
+    max_tokens: 4000
+
+  designer:
+    model: "gpt-4o"
+    temperature: 0.5
+    max_tokens: 1500
+
+  publisher:
+    model: "gpt-4o"
+    temperature: 0.4
+    max_tokens: 1500
+
+  email:
+    model: "gpt-4o"
+    temperature: 0.7
+    max_tokens: 1500
+
+  social_media:
+    model: "gpt-4o"
+    temperature: 0.8
+    max_tokens: 1000
+
+  analytics:
+    model: "gpt-4o"
+    temperature: 0.3
+    max_tokens: 2000
+
+# --- مسارات الملفات ---
+paths:
+  products: "./products"
+  data: "./data"
+  templates: "./templates"
+  logs: "./logs"
+  reports: "./reports"
+  web_static: "./web/static"
+  web_templates: "./web/templates"
